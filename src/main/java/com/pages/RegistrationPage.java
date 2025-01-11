@@ -3,6 +3,8 @@ import com.microsoft.playwright.Page;
 
 import static org.testng.Assert.assertTrue;
 
+import java.util.UUID;
+
 
 
 public class RegistrationPage {
@@ -50,10 +52,11 @@ public class RegistrationPage {
     	return password;
     }
     
-    public static String username1= "Bhushan7065";    
+    //generate unique random user name
+    public static String username1= "Name_" + UUID.randomUUID().toString().substring(0, 8);   
 
     /**
-     * Perform user registration with random username.
+     * Perform user registration
      * @throws InterruptedException 
      */
     public void registerUser(String firstName, String lastName, String address, String city, String state,
